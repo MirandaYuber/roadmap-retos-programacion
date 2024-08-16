@@ -181,7 +181,7 @@ class GestionVentas:
         total_venta = 0
 
         for producto in self.productos.values():
-            total_venta += producto['precio']
+            total_venta += producto['precio'] * producto['cantidad_vendida']
 
         print(f'\n\tEl precio total de la venta es de ${total_venta}')
 
@@ -191,7 +191,7 @@ class GestionVentas:
 
             for clave, valor in self.productos.items():
                 if clave == nombre_producto:
-                    total_venta += valor['precio']
+                    total_venta += valor['precio'] * valor['cantidad_vendida']
 
             print(f'\n\tEl precio total de la venta or el producto {nombre_producto} es de ${total_venta}')
         else:
